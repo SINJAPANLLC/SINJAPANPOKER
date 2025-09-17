@@ -1,12 +1,10 @@
-import { createClient } from 'contentful';
-import config from '../clientConfig';
-
+// ダミーモード：Contentfulなしで動作させる
 const useContentful = () => {
-  const client = createClient({
-    space: config.contentfulSpaceId,
-    accessToken: config.contentfulAccessToken,
-  });
-  return client;
+  return {
+    getEntries: async () => {
+      return { items: [] };
+    }
+  };
 };
 
 export default useContentful;
